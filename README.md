@@ -4,4 +4,5 @@ ein test repo
 4.zeile daz
 2änerg z5
 2änderg z6
+3.änderg vor ende
 ende file
