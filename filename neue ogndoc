@@ -1,0 +1,26 @@
+neue datei für dokumentation
+Activate watchdog
+RPi include an internal watchdog which can reboot RPi if it has crashed.
+To activate it:
+sudo apt-get install watchdog chkconfig
+sudo sh -c "echo 'bcm2708_wdog' >> /etc/modules"
+sudo sh -c "echo 'watchdog-device = /dev/watchdog' >> /etc/watchdog.conf"
+sudo sh -c "echo 'watchdog-timeout = 15 # Required to prevent cannot set timeout 60 issue on RPi' >> /etc/watchdog.conf"
+sudo modprobe bcm2708_wdog
+sudo service watchdog start
+An other interesting watchdog option may be "interface" to monitor trafic on network interface (see "man watchdog.conf" on your RPi). But as network interface name can be wired or wifi we can't provide it as default.
+To confirm watchdog is installed and running type 'sudo service watchdog status'
+It should return confirmation that watchdog is running
+Incrase USB power output
+(For RPi B+ or RPi 2)
+In /boot/config.txt add the following line and then reboot:
+max_usb_current=1
+More information are available on: https://www.raspberrypi.org/forums/viewtopic.php?p=594183#p594183
+Solder polyfuse
+(For RPI A or B. Not required for B+ or Pi2)
+RPi is protected by a polyfuse. It is very interesting to protect it but has a big drawback: it may have big resistance so reduce available voltage for board.
+See this thread for discussion: https://groups.google.com/forum/#!topic/openglidernetwork/NsOziIhT8Is
+As most of power supply should have current limitation/shortcut protection we can safely remove this extra protection by soldering a small cable between the 2 ends of polyfuse F3 as visible on flowing picture:
+korr 16.9
+'LOIH'=> array('HOHENEMS',"l.rec='LOIH' AND (l.alt < 700 AND (l.lat BETWEEN 47.37833 AND 47.38972) AND (l.lon BETWEEN 9.69167 AND 9.70944)",412,''),
+=======================================================
