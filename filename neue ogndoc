@@ -22,5 +22,7 @@ RPi is protected by a polyfuse. It is very interesting to protect it but has a b
 See this thread for discussion: https://groups.google.com/forum/#!topic/openglidernetwork/NsOziIhT8Is
 As most of power supply should have current limitation/shortcut protection we can safely remove this extra protection by soldering a small cable between the 2 ends of polyfuse F3 as visible on flowing picture:
 korr 16.9
+vor zeile 25 eine neue zeile
 'LOIH'=> array('HOHENEMS',"l.rec='LOIH' AND (l.alt < 700 AND (l.lat BETWEEN 47.37833 AND 47.38972) AND (l.lon BETWEEN 9.69167 AND 9.70944)",412,''),
 =======================================================
+das ist die 2 Anderng testloh vor zeile 25 und und zum schluss diese hier
